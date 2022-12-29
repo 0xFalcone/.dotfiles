@@ -1,0 +1,12 @@
+[general]
+base_currency = usd
+display = price
+
+
+[bitcoin]
+icon = ﴑ
+
+
+[ethereum]
+icon = ﲹ
+
