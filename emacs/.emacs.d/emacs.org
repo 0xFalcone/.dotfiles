@@ -1,9 +1,10 @@
 
 * System Setup
-#+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+#+PROPERTY: header-args:emacs-lisp :tangle ~/.dotfiles/emacs/.emacs.d/init.el :mkdirp yes
 
 
 #+begin_src emacs-lisp
+
   ;; package -- Summary
 
 
@@ -959,7 +960,7 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
 
 #+begin_src emacs-lisp
 
-  (defun efs/org-font-setup ()
+  (defun my/org-font-setup ()
     ;; Replace list hyphen with dot
     (font-lock-add-keywords 'org-mode
                             '(("^ *\\([-]\\) "
@@ -985,8 +986,11 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
     (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
     (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
-   (efs/org-font-setup)
+   (my/org-font-setup)
+
 #+end_src
+
+#+RESULTS:
 
 ** Basic Config
 
@@ -1302,17 +1306,18 @@ Try these commands with =M-x=:
 
     :config
     ;; Set up Node debugging
-    ;; (require 'dap-node)
-    ;; (dap-node-setup) ;; Automatically installs Node debug adapter if needed
+    (require 'dap-node)
+    (dap-node-setup) ;; Automatically installs Node debug adapter if needed
 
-  (add-hook 'dap-stopped-hook
-            (lambda (arg) (call-interactively #'dap-hydra)))
+    ;; (add-hook 'dap-stopped-hook
+    ;;         (lambda (arg) (call-interactively #'dap-hydra)))
 
     ;; Bind `C-c l d` to `dap-hydra` for easy access
     (general-define-key
       :keymaps 'lsp-mode-map
       :prefix lsp-keymap-prefix
       "d" '(dap-hydra t :wk "debugger")))
+
 
 #+end_src
 

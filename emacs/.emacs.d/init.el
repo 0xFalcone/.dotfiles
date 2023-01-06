@@ -51,7 +51,7 @@
  (setq visible-bell t)
  (setq initial-scratch-message "")	        ; Make *scratch* buffer blank
  (setq use-short-answers t)                   ; y-or-n-p makes answering questions faster
- (global-hl-line-mode 1)			; Highlight the current line 
+ (global-hl-line-mode 1)			; Highlight the current line
  (setq read-process-output-max (* 1024 1024))  ; Increase the amount of data which Emacs reads
 
  ;; turn off auto revert messages
@@ -106,7 +106,7 @@
 (use-package super-save
  :ensure t
  :config
- (super-save-mode +1))     
+ (super-save-mode +1))
  (setq super-save-auto-save-when-idle nil)
  ;;(setq auto-save-default nil)
 
@@ -117,7 +117,7 @@
 
 (global-set-key (kbd "C-x k") 'bjm/kill-this-buffer)
 
-(use-package undo-tree) 
+(use-package undo-tree)
 (global-undo-tree-mode)
 
 ;;(use-package undo-fu)
@@ -164,7 +164,7 @@
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 130)
 
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono" :height 130) 
+(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono" :height 130)
 
 ;; Set the variable pitch face
 ;;(set-face-attribute 'variable-pitch nil :font "Arimo Nerd Font" :height 160 :weight 'regular)
@@ -183,7 +183,7 @@
   (my/leader-keys
     "o"  '(:ignore o :which-key "Org Mode")
     "oc" '(org-capture :which-key "capture")
-    "oa" '(org-agenda :which-key "Agenda") 
+    "oa" '(org-agenda :which-key "Agenda")
 
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")))
@@ -284,7 +284,7 @@
   :hook (dired-mode . dired-hide-dotfiles-mode)
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
-    "H" 'dired-hide-dotfiles-mode))    
+    "H" 'dired-hide-dotfiles-mode))
 
 
 (require 'dired-single)
@@ -694,7 +694,7 @@
 (add-hook 'org-mode-hook 'visual-line-mode)
 
 (setq org-capture-templates
-    '(    
+    '(
 
       ("g" "General Tasks"
        entry (file+headline "~/PIM/tasks.org" "General Tasks")
@@ -754,7 +754,7 @@
                     (:startgroup . nil)
                     ("@bug" . ?b)
                     ("@feature" . ?u)
-                    ("@spike" . ?j)                      
+                    ("@spike" . ?j)
                     (:endgroup . nil)
 
                     ;; Ticket flags
@@ -999,7 +999,7 @@
 
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :hook 
+  :hook
   (lsp-mode . lsp-enable-which-key-integration)
   (c-mode-hook . lsp-deferred)
   (c-mode . lsp)
@@ -1190,3 +1190,4 @@
 
 ;; Make gc pauses faster by decreasing the threshold.
 (setq gc-cons-threshold (* 2 1000 1000))
+lldb-vscode llvm github
