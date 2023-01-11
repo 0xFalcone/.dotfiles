@@ -254,7 +254,7 @@ bindsym mod1+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym mod1+Shift+p exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # Org Capture
-bindsym mod1+t exec --no-startup-id ~/doom-emacs/bin/org-capture -k t
+bindsym mod1+t exec --no-startup-id ~/doom-emacs/bin/org-capture -k i
 
 # <<--------- Startup ------------------>>
 
@@ -262,11 +262,11 @@ bindsym mod1+t exec --no-startup-id ~/doom-emacs/bin/org-capture -k t
 exec sh ~/.fehbg
 # Launch Polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
-exec_always --no-startup-id $HOME/.config/polybar.old/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Start Picom
 exec_always --no-startup-id "picom --config ~/.config/picom/picom.conf --experimental-backends -b"
 # auto lock the screen
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -i ~/Pictures/Wallpapers/universal_soup_blur.png\""
+exec "xautolock -detectsleep -time 10 -locker \"i3lock -i ~/Pictures/Wallpapers/universal_soup_blur.png\""
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
