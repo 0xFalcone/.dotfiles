@@ -1,5 +1,5 @@
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25"
-vim.opt.showmode = false
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
